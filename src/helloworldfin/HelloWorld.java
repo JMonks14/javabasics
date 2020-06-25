@@ -1,5 +1,5 @@
 package helloworldfin;
-
+import java.util.Scanner;
 public class HelloWorld {
 	
 public static void printMessage(String message) {

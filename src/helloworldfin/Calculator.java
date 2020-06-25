@@ -1,4 +1,5 @@
 package helloworldfin;
+import java.util.Scanner;
 
 public class Calculator {
 	
@@ -19,12 +20,27 @@ public class Calculator {
 		int ret = num1 / num2;
 		System.out.println(ret);
 	}
-	
+	public static void opNumbers(int num1, int num2, String op) {
+		
+		switch(op) {
+		case "+":
+			addNumbers(num1,num2);
+			break;
+		case "-":
+			subNumbers(num1,num2);
+			break;
+		case "*":
+			mulNumbers(num1,num2);
+			break;
+		case "/":
+			divNumbers(num1,num2);
+			break;
+		default:
+			System.out.println("Invalid operator");
+	}
+	}
 	public static void main(String[] args) {
-		addNumbers(4, 5);
-		subNumbers(9,4);
-		mulNumbers(3,4);
-		divNumbers(15,3);
+		opNumbers(7, 5, "*");
 		
 	}
 
