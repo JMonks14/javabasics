@@ -39,9 +39,41 @@ public class Calculator {
 			System.out.println("Invalid operator");
 	}
 	}
-	public static void main(String[] args) {
-		opNumbers(7, 5, "*");
+	
+	private static int isInt() {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		int value;
 		
+		while (!(sc.hasNextInt())) {
+			System.out.println("Please enter a valid integer");
+			sc.next();
+		}
+		value=sc.nextInt();
+		return value;
+	}
+	
+	private static String isOp() {
+		
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		String value=sc.next();
+		
+		while (!(value.contentEquals("+") || value.contentEquals("-") || value.contentEquals("*") || value.contentEquals("/"))) {
+			System.out.println("Please enter a valid operator: +, -, *, or /");
+			value=sc.next();
+		}
+		return value;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("Please enter number 1: ");
+		int num1 = isInt();
+		System.out.println("Please enter number 2: ");
+		int num2 = isInt();
+		System.out.println("Please enter operator from: +, -, *, or /");
+		String op = isOp();
+		opNumbers(num1, num2, op);
 	}
 
 }
